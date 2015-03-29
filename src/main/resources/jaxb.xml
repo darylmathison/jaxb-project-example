@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    
+    <bean id="address1" class="org.mathison.jaxb.beans.Address">
+        <property name="addressLine">
+            <value>123 Willow View</value>
+        </property>
+        <property name="city">
+            <value>Cibolo</value>
+        </property>
+        <property name="state">
+            <value>TX</value>
+        </property>
+        <property name="zipCode">
+            <value>78228</value>
+        </property>
+        <property name="type">
+            <value>HOME</value>
+        </property>
+    </bean>
+    
+    <bean id="address2" class="org.mathison.jaxb.beans.Address">
+        <property name="addressLine">
+            <value>411 Grieg</value>
+        </property>
+        <property name="city">
+            <value>San Antonio</value>
+        </property>
+        <property name="state">
+            <value>TX</value>
+        </property>
+        <property name="zipCode">
+            <value>78228</value>
+        </property>
+        <property name="type">
+            <value>WORK</value>
+        </property>
+    </bean>
+    
+    <bean id="phonenum1" class="org.mathison.jaxb.beans.PhoneNumber">
+        <property name="number">
+            <value>210-123-4567</value>
+        </property>
+        <property name="type">
+            <value>WORK</value>
+        </property>
+    </bean>
+    
+    <bean id="phonenum2" class="org.mathison.jaxb.beans.PhoneNumber">
+        <property name="number">
+            <value>210-345-1111</value>
+        </property>
+        <property name="type">
+            <value>HOME</value>
+        </property>
+    </bean>
+    
+    <bean id="contact" class="org.mathison.jaxb.beans.Contact">
+        <property name="firstName">
+            <value>Daryl</value>
+        </property>
+        <property name="lastName">
+            <value>Mathison</value>
+        </property>
+        <property name="middleName">
+            <value>Bob</value>
+        </property>
+        <property name="jobTitle">
+            <value>Developer</value>
+        </property>
+        <property name="addresses">
+            <list>
+                <ref local="address1"/>
+                <ref local="address2"/>
+            </list>
+        </property>
+        <property name="numbers">
+            <list>
+                <ref local="phonenum1"/>
+                <ref local="phonenum2"/>
+            </list>
+        </property>
+    </bean>
+        
+</beans>

@@ -1,15 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mathison.jaxb.beans;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+import lombok.Getter;
+import lombok.Setter;
+
 
 /**
  *
@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@Getter
+@Setter
 public class Contact {
     private String lastName;
     private String firstName;
@@ -31,53 +33,6 @@ public class Contact {
     @XmlElement(name = "phone-number")
     private List<PhoneNumber> numbers;
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
-
-    public List<PhoneNumber> getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(List<PhoneNumber> numbers) {
-        this.numbers = numbers;
-    }
 
     @Override
     public String toString() {
@@ -105,16 +60,16 @@ public class Contact {
             return false;
         }
         final Contact other = (Contact) obj;
-        if ((this.lastName == null) ? (other.lastName != null) : !this.lastName.equals(other.lastName)) {
+        if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
-        if ((this.firstName == null) ? (other.firstName != null) : !this.firstName.equals(other.firstName)) {
+        if (!Objects.equals(this.firstName, other.firstName)) {
             return false;
         }
-        if ((this.middleName == null) ? (other.middleName != null) : !this.middleName.equals(other.middleName)) {
+        if (!Objects.equals(this.middleName, other.middleName)) {
             return false;
         }
-        if ((this.jobTitle == null) ? (other.jobTitle != null) : !this.jobTitle.equals(other.jobTitle)) {
+        if (!Objects.equals(this.jobTitle, other.jobTitle)) {
             return false;
         }
         
